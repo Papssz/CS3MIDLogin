@@ -1,16 +1,16 @@
-# flutter_application_2
+# Multiple Screen + Pub.dev
 
-A new Flutter project.
+```Project Instructions: 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Create a new project and name it: CS3MidLogin.
+Update the project or app logo using a Flutter Package. 
+Create at least 3 additional screens.
+(1) Login Screen: as shown on your assigned UI(2) Sign Up Screen: as inspired on the Login Screen:
+   >> Firstname
+   >> Lastname
+   >> Email Address
+   >> Username
+   >> Password
+   >> Confirm Password
+(3) Home Screen: Shown when the Google Login button is clicked from the login screen
+   >> The Home screen must show the logo of your project at the center of the screen (Body property)
