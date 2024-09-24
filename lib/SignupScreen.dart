@@ -23,7 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 flex: 7,
                 child: Image.asset(
                   'assets/STONKS.png',
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                   height: double.infinity,
                 ),
               ),

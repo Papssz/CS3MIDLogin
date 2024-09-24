@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 flex: 7,
                 child: Image.asset(
                   'assets/STONKS.png',
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                   height: double.infinity,
                 ),
               ),
