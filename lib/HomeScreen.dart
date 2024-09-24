@@ -31,6 +31,7 @@ class HomeScreen extends StatelessWidget {
         child: Image.asset(
           'assets/STOONKS.png',
           fit: BoxFit.cover,
+          width: double.infinity,
           height: double.infinity,
         ),
       ),
