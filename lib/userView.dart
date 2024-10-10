@@ -145,7 +145,10 @@ class UserView extends StatelessWidget {
                           onTap: () {},
                         ),
                         ListTile(
-                          leading: const Icon(Icons.payment, color: Colors.black),
+                          leading: const Icon(
+                            Icons.payment, 
+                            color: Colors.black
+                          ),
                           title: const Text(
                             'Billing Details',
                             style: TextStyle(
@@ -159,12 +162,19 @@ class UserView extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: Colors.grey[200],
                             ),
-                            child: const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 16),
+                            child: const Icon(
+                              Icons.arrow_forward_ios, 
+                              color: Colors.black, 
+                              size: 16
+                            ),
                           ),
                           onTap: () {},
                         ),
                         ListTile(
-                          leading: const Icon(Icons.group, color: Colors.black),
+                          leading: const Icon(
+                            Icons.group, 
+                            color: Colors.black
+                          ),
                           title: const Text(
                             'User Management',
                             style: TextStyle(
@@ -178,7 +188,11 @@ class UserView extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: Colors.grey[200],
                             ),
-                            child: const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 16),
+                            child: const Icon(
+                              Icons.arrow_forward_ios, 
+                              color: Colors.black, 
+                              size: 16
+                            ),
                           ),
                           onTap: () {},
                         ),
@@ -189,7 +203,10 @@ class UserView extends StatelessWidget {
                         ),
                         const SizedBox(height: 5.0),
                         ListTile(
-                          leading: const Icon(Icons.info, color: Colors.black),
+                          leading: const Icon(
+                            Icons.info, 
+                            color: Colors.black
+                          ),
                           title: const Text(
                             'User Details',
                             style: TextStyle(
@@ -203,7 +220,11 @@ class UserView extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: Colors.grey[200],
                             ),
-                            child: const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 16),
+                            child: const Icon(
+                              Icons.arrow_forward_ios, 
+                              color: Colors.black, 
+                              size: 16
+                            ),
                           ),
                           onTap: () {
                             Navigator.of(context).push(
