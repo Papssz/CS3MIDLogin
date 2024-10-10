@@ -1,4 +1,4 @@
-name: flutter_application_2
+name: cs3midLogin
 description: "A new Flutter project."
 
 publish_to: 'none'
@@ -15,6 +15,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   font_awesome_flutter: 10.7.0
+  flutter_launcher_icons: 0.14.1
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +27,25 @@ flutter:
   assets:
     - assets/STONKS.png
     - assets/STOONKS.png
+    - assets/bet.jpg
+
+flutter_launcher_icons:
+  android: true
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/bet.jpg"
+  ios: true
+  image_path: "assets/bet.jpg"
+  min_sdk_android: 21 
+  web:
+    generate: true
+    image_path: "assets/bet.jpg"
+    background_color: "#ffffff"
+    # theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/bet.jpg"
+    icon_size: 48 
+  macos:
+    generate: true
+    image_path: "assets/bet.jpg"
+

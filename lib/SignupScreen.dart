@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/HomeScreen.dart';
-import 'package:flutter_application_2/LoginScreen.dart';
+import 'package:cs3midLogin/HomeScreen.dart';
+import 'package:cs3midLogin/LoginScreen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
