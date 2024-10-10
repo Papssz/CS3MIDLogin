@@ -1,6 +1,8 @@
+import 'package:cs3midLogin/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:cs3midLogin/userDetails.dart';
 import 'package:cs3midLogin/LoginScreen.dart';
+import 'package:cs3midLogin/settings.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UserView extends StatelessWidget {
@@ -65,8 +67,8 @@ class UserView extends StatelessWidget {
                           color: const Color.fromARGB(255, 98, 0, 255).withOpacity(0.8),
                         ),
                         child: IconButton(
-                          icon: const Icon(
-                            Icons.edit,
+                          icon: const FaIcon(
+                            FontAwesomeIcons.edit,
                             color: Colors.white,
                             size: 16,
                           ),
@@ -126,7 +128,7 @@ class UserView extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 20),
                       children: [
                         ListTile(
-                          leading: const Icon(
+                          leading: const FaIcon(
                             FontAwesomeIcons.cog, 
                             color: Colors.black,
                             size: 20
@@ -144,16 +146,22 @@ class UserView extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: Colors.grey[200],
                             ),
-                            child: const Icon(
+                            child: const FaIcon(
                               FontAwesomeIcons.angleRight, 
                               color: Colors.black, 
                               size: 16
                             ),
                           ),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                SettingsPage()),
+                            );
+                          },
                         ),
                         ListTile(
-                          leading: const Icon(
+                          leading: const FaIcon(
                             FontAwesomeIcons.creditCard, 
                             color: Colors.black,
                             size: 20
@@ -180,7 +188,7 @@ class UserView extends StatelessWidget {
                           onTap: () {},
                         ),
                         ListTile(
-                          leading: const Icon(
+                          leading: const FaIcon(
                             FontAwesomeIcons.users, 
                             color: Colors.black,
                             size: 20
@@ -198,7 +206,7 @@ class UserView extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: Colors.grey[200],
                             ),
-                            child: const Icon(
+                            child: const FaIcon(
                               FontAwesomeIcons.angleRight, 
                               color: Colors.black, 
                               size: 16
@@ -213,7 +221,7 @@ class UserView extends StatelessWidget {
                         ),
                         const SizedBox(height: 5.0),
                         ListTile(
-                          leading: const Icon(
+                          leading: const FaIcon(
                             FontAwesomeIcons.infoCircle, 
                             color: Colors.black,
                             size: 21
@@ -246,8 +254,8 @@ class UserView extends StatelessWidget {
                           },
                         ),
                         ListTile(
-                          leading: const Icon(
-                            FontAwesomeIcons.signOutAlt, 
+                          leading: const FaIcon(
+                            FontAwesomeIcons.signOutAlt,
                             color: Colors.red,
                             size: 20
                           ),
@@ -259,8 +267,31 @@ class UserView extends StatelessWidget {
                             ),
                           ),
                           onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => const LoginScreen()),
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: const Text('Confirm Logout'),
+                                  content: const Text('Are you sure you want to logout?'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('Cancel'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop(); 
+                                        Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(builder: (context) => const LoginScreen()),
+                                        );
+                                      },
+                                      child: const Text('Logout'),
+                                    ),
+                                  ],
+                                );
+                              },
                             );
                           },
                         ),

@@ -130,7 +130,7 @@ class UserDetails extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(
+        FaIcon(
           icon, 
           color: const Color.fromARGB(255, 0, 10, 50), 
           size: 25
@@ -150,7 +150,7 @@ class UserDetails extends StatelessWidget {
             child: Text(
               text,
               style: const TextStyle(
-                fontSize: 16, 
+                fontSize: 14, 
                 fontFamily: 'TruenoRound'
               ), 
             ),
