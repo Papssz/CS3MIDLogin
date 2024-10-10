@@ -15,14 +15,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<Map<String, dynamic>?> fetchUserData() async {
     try {
-      var dio = Dio(); // Create Dio instance
+      var dio = Dio();
       Response response = await dio.get('https://randomuser.me/api/');
-
-      // Return the entire user data instead of just the name
-      return response.data['results'][0]; // Return user data map
+      return response.data['results'][0]; 
     } catch (e) {
-      // Handle the error here if needed
-      return null; // Return null in case of an error
+      return null; 
     }
   }
 
@@ -244,10 +241,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.only(left: 10.0, right: 20.0),
                       child: ElevatedButton(
                         onPressed: () async {
-                          // Fetch user data from the API
                           var userData = await fetchUserData();
                           if (userData != null) {
-                            // Navigate to UserView with the fetched data
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => UserView(user: userData),
