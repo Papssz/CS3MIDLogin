@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cs3midLogin/LoginScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,15 +12,14 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(
             color: Colors.white,
           )
-          ),
+        ),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
             color: Colors.white,
             ),
           onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const LoginScreen()),
+            Navigator.of(context).pop(
             );
           },
         ),
