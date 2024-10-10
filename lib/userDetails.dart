@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UserDetails extends StatelessWidget {
   final Map<String, dynamic> user;
@@ -91,20 +92,40 @@ class UserDetails extends StatelessWidget {
                       const SizedBox(height: 16.0),
                       const Divider(thickness: 2),
                       const SizedBox(height: 16.0),
-                      _buildInfoRow(Icons.person, 'Gender: $gender'),
+                      _buildInfoRow(
+                        FontAwesomeIcons.user, 
+                        'Gender: $gender',
+                      ),
                       const SizedBox(height: 12.0),
-                      _buildInfoRow(Icons.calendar_today, 'Date of Birth: $dob'),
+                      _buildInfoRow(
+                        FontAwesomeIcons.calendar, 
+                        'Date of Birth: $dob'
+                      ),
                       const SizedBox(height: 12.0),
-                      _buildInfoRow(Icons.assignment, 'Registered: $registered'),
+                      _buildInfoRow(
+                        FontAwesomeIcons.fileAlt, 
+                        'Registered: $registered'
+                      ),
                       const SizedBox(height: 20.0),
-                      _buildInfoRow(Icons.location_on,
-                          'Address: $streetNumber $streetName, $city, $state, $postcode, $country'),
+                      _buildInfoRow(
+                        FontAwesomeIcons.mapMarkerAlt,
+                        'Address: $streetNumber $streetName, $city, $state, $postcode, $country'
+                      ),
                       const SizedBox(height: 16.0),
-                      _buildInfoRow(Icons.phone, 'Phone: $phone'),
+                      _buildInfoRow(
+                        FontAwesomeIcons.phone, 
+                        'Phone: $phone'
+                      ),
                       const SizedBox(height: 8.0),
-                      _buildInfoRow(Icons.mobile_friendly, 'Cell: $cell'),
+                      _buildInfoRow(
+                        FontAwesomeIcons.mobileScreen, 
+                        'Cell: $cell'
+                      ),
                       const SizedBox(height: 8.0),
-                      _buildInfoRow(Icons.flag, 'Nationality: $nationality'),
+                      _buildInfoRow(
+                        FontAwesomeIcons.solidFlag, 
+                        'Nationality: $nationality'
+                      ),
                     ],
                   ),
                 ),
@@ -120,7 +141,11 @@ class UserDetails extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(icon, color: const Color.fromARGB(255, 0, 10, 50), size: 26),
+        Icon(
+          icon, 
+          color: const Color.fromARGB(255, 0, 10, 50), 
+          size: 25
+        ),
         const SizedBox(width: 12.0),
         Expanded(
           child: Container(
@@ -128,7 +153,10 @@ class UserDetails extends StatelessWidget {
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 240, 240, 240),
               borderRadius: BorderRadius.circular(12.0),
-              border: Border.all(color: const Color.fromARGB(255, 0, 10, 50), width: 0.5),
+              border: Border.all(
+                color: const Color.fromARGB(255, 0, 10, 50), 
+                width: 0.5
+              ),
             ),
             child: Text(
               text,
