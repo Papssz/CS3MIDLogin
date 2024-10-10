@@ -126,7 +126,11 @@ class UserView extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 20),
                       children: [
                         ListTile(
-                          leading: const Icon(Icons.settings, color: Colors.black),
+                          leading: const Icon(
+                            FontAwesomeIcons.cog, 
+                            color: Colors.black,
+                            size: 20
+                          ),
                           title: const Text(
                             'Settings',
                             style: TextStyle(
@@ -140,14 +144,19 @@ class UserView extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: Colors.grey[200],
                             ),
-                            child: const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 16),
+                            child: const Icon(
+                              FontAwesomeIcons.angleRight, 
+                              color: Colors.black, 
+                              size: 16
+                            ),
                           ),
                           onTap: () {},
                         ),
                         ListTile(
                           leading: const Icon(
-                            Icons.payment, 
-                            color: Colors.black
+                            FontAwesomeIcons.creditCard, 
+                            color: Colors.black,
+                            size: 20
                           ),
                           title: const Text(
                             'Billing Details',
@@ -163,7 +172,7 @@ class UserView extends StatelessWidget {
                               color: Colors.grey[200],
                             ),
                             child: const Icon(
-                              Icons.arrow_forward_ios, 
+                              FontAwesomeIcons.angleRight, 
                               color: Colors.black, 
                               size: 16
                             ),
@@ -172,8 +181,9 @@ class UserView extends StatelessWidget {
                         ),
                         ListTile(
                           leading: const Icon(
-                            Icons.group, 
-                            color: Colors.black
+                            FontAwesomeIcons.users, 
+                            color: Colors.black,
+                            size: 20
                           ),
                           title: const Text(
                             'User Management',
@@ -189,7 +199,7 @@ class UserView extends StatelessWidget {
                               color: Colors.grey[200],
                             ),
                             child: const Icon(
-                              Icons.arrow_forward_ios, 
+                              FontAwesomeIcons.angleRight, 
                               color: Colors.black, 
                               size: 16
                             ),
@@ -204,8 +214,9 @@ class UserView extends StatelessWidget {
                         const SizedBox(height: 5.0),
                         ListTile(
                           leading: const Icon(
-                            Icons.info, 
-                            color: Colors.black
+                            FontAwesomeIcons.infoCircle, 
+                            color: Colors.black,
+                            size: 21
                           ),
                           title: const Text(
                             'User Details',
@@ -221,7 +232,7 @@ class UserView extends StatelessWidget {
                               color: Colors.grey[200],
                             ),
                             child: const Icon(
-                              Icons.arrow_forward_ios, 
+                              FontAwesomeIcons.angleRight, 
                               color: Colors.black, 
                               size: 16
                             ),
@@ -235,7 +246,11 @@ class UserView extends StatelessWidget {
                           },
                         ),
                         ListTile(
-                          leading: const Icon(Icons.logout, color: Colors.red),
+                          leading: const Icon(
+                            FontAwesomeIcons.signOutAlt, 
+                            color: Colors.red,
+                            size: 20
+                          ),
                           title: const Text(
                             'Logout',
                             style: TextStyle(
