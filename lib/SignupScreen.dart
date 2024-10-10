@@ -15,7 +15,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+      child: Stack(
         children: [
           Row(
             children: [
@@ -90,8 +94,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     'Sign Up',
                     style: TextStyle(
                       fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'sans-serif',
+                      fontFamily: 'TruenoRound',
                       color: Color.fromARGB(255, 17, 5, 90),
                     ),
                     textAlign: TextAlign.left,
@@ -108,7 +111,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               const Text(
                                 'First Name',
                                 style: TextStyle(
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                               const SizedBox(height: 5.0),
@@ -129,7 +132,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                                 style: const TextStyle(
                                   color: Colors.blueAccent,
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                             ],
@@ -145,7 +148,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               const Text(
                                 'Last Name',
                                 style: TextStyle(
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                               const SizedBox(height: 5.0),
@@ -166,7 +169,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                                 style: const TextStyle(
                                   color: Colors.blueAccent,
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                             ],
@@ -187,7 +190,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               const Text(
                                 'Email Address',
                                 style: TextStyle(
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                               const SizedBox(height: 5.0),
@@ -208,7 +211,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                                 style: const TextStyle(
                                   color: Colors.blueAccent,
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                             ],
@@ -224,7 +227,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               const Text(
                                 'Username',
                                 style: TextStyle(
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                               const SizedBox(height: 5.0),
@@ -245,7 +248,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                                 style: const TextStyle(
                                   color: Colors.blueAccent,
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                             ],
@@ -266,7 +269,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               const Text(
                                 'Password',
                                 style: TextStyle(
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                               const SizedBox(height: 5.0),
@@ -288,7 +291,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                                 style: const TextStyle(
                                   color: Colors.blueAccent,
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                             ],
@@ -305,7 +308,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               const Text(
                                 'Confirm Password',
                                 style: TextStyle(
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                               const SizedBox(height: 5.0),
@@ -327,7 +330,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                                 style: const TextStyle(
                                   color: Colors.blueAccent,
-                                  fontFamily: 'sans-serif',
+                                  fontFamily: 'TruenoRound',
                                 ),
                               ),
                             ],
@@ -338,7 +341,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   const SizedBox(height: 20.0),
                   Container(
-                    padding: const EdgeInsets.only(left: 10.0, right: 15.0),
+                    padding: const EdgeInsets.only(left: 105.0, right: 15.0),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(
@@ -356,7 +359,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           color: Colors.white,
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'sans-serif',
+                          fontFamily: 'TruenoRound',
                         ),
                       ),
                     ),
@@ -381,7 +384,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       'Continue with Google',
                       style: TextStyle(
                         fontSize: 15,
-                        fontFamily: 'sans-serif',
+                        fontFamily: 'TruenoRound',
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 59, 58, 61),
                       ),
@@ -402,7 +405,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       text: 'Already have an account? ',
                       style: const TextStyle(
                         color: Colors.black,
-                        fontFamily: 'sans-serif',
+                        fontFamily: 'TruenoRound',
                       ),
                       children: [
                         WidgetSpan(
@@ -417,7 +420,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               style: TextStyle(
                                 color: Colors.blue,
                                 fontWeight: FontWeight.bold,
-                                fontFamily: 'sans-serif',
+                                fontFamily: 'TruenoRound',
                               ),
                             ),
                           ),
@@ -430,6 +433,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
         ],
+        )
       ),
     );
   }
