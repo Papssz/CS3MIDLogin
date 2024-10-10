@@ -16,6 +16,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   font_awesome_flutter: 10.7.0
   flutter_launcher_icons: 0.14.1
+  dio: ^5.7.0
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +29,14 @@ flutter:
     - assets/STONKS.png
     - assets/STOONKS.png
     - assets/bet.jpg
+  fonts:
+    - family: TruenoRound
+      fonts:
+        - asset: assets/fonts/TruenoRound-lJZ0.otf
+        - asset: assets/fonts/TruenoRoundBold-nJx0.otf
+        - asset: assets/fonts/TruenoRoundItalic-16PB.otf
+        - asset: assets/fonts/TruenoRounndBoldItalic-R5K6.otf
+
 
 flutter_launcher_icons:
   android: true
@@ -40,7 +49,7 @@ flutter_launcher_icons:
     generate: true
     image_path: "assets/bet.jpg"
     background_color: "#ffffff"
-    # theme_color: "#hexcode"
+    theme_color: "#hexcode"
   windows:
     generate: true
     image_path: "assets/bet.jpg"
