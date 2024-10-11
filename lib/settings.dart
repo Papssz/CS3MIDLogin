@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:cs3midLogin/userDetails.dart'; // Replace with actual import path
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatelessWidget {  
+  final Map<String, dynamic> user; // Expect user data
+
+  const SettingsPage({Key? key, required this.user}) : super(key: key); // Add user parameter
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +15,7 @@ class SettingsPage extends StatelessWidget {
           'Settings',
           style: TextStyle(
             color: Colors.white,
-            fontFamily: 'TruenoRound'
+            fontFamily: 'TruenoRound',
           ),
         ),
         backgroundColor: const Color.fromARGB(255, 0, 10, 50),
@@ -23,14 +28,37 @@ class SettingsPage extends StatelessWidget {
           children: [
             ListTile(
               leading: const FaIcon(
+                FontAwesomeIcons.user, 
+                color: Colors.white,
+              ),
+              title: const Text(
+                'Personal Details',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'TruenoRound',
+                ),
+              ),
+              onTap: () {
+                // Navigate to UserDetails page with user data
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => UserDetails(user: user),
+                  ),
+                );
+              },
+            ),
+            const Divider(color: Colors.white),
+            ListTile(
+              leading: const FaIcon(
                 FontAwesomeIcons.bell, 
-                color: Colors.white
+                color: Colors.white,
               ),
               title: const Text(
                 'Notifications',
                 style: TextStyle(
                   color: Colors.white,
-                  fontFamily: 'TruenoRound'
+                  fontFamily: 'TruenoRound',
                 ),
               ),
               onTap: () {},
@@ -39,13 +67,13 @@ class SettingsPage extends StatelessWidget {
             ListTile(
               leading: const FaIcon(
                 FontAwesomeIcons.lock, 
-                color: Colors.white
+                color: Colors.white,
               ),
               title: const Text(
                 'Privacy',
                 style: TextStyle(
                   color: Colors.white,
-                  fontFamily: 'TruenoRound'
+                  fontFamily: 'TruenoRound',
                 ),
               ),
               onTap: () {},
@@ -54,13 +82,13 @@ class SettingsPage extends StatelessWidget {
             ListTile(
               leading: const FaIcon(
                 FontAwesomeIcons.shieldAlt, 
-                color: Colors.white
+                color: Colors.white,
               ),
               title: const Text(
                 'Security',
                 style: TextStyle(
                   color: Colors.white,
-                  fontFamily: 'TruenoRound'
+                  fontFamily: 'TruenoRound',
                 ),
               ),
               onTap: () {},
@@ -69,13 +97,13 @@ class SettingsPage extends StatelessWidget {
             ListTile(
               leading: const FaIcon(
                 FontAwesomeIcons.trash, 
-                color: Colors.red
+                color: Colors.red,
               ),
               title: const Text(
                 'Delete Account',
                 style: TextStyle(
                   color: Colors.red,
-                  fontFamily: 'TruenoRound'
+                  fontFamily: 'TruenoRound',
                 ),
               ),
               onTap: () {
@@ -93,21 +121,43 @@ class SettingsPage extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Confirm Deletion'),
-          content: const Text('Are you sure you want to delete your account? This action cannot be undone.'),
+          title: const Text(
+            'Confirm Deletion',
+            style: TextStyle(
+              fontFamily: 'TreunoRound'
+            ),
+          ),
+          content: const Text(
+            'Are you sure you want to delete your account? This action cannot be undone.',
+            style: TextStyle(
+              fontFamily: 'TreunoRound'
+            ),
+          ),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('Cancel'),
+              child: const Text(
+                'Cancel',
+                style: TextStyle(
+                  fontFamily: 'TruenoRound',
+                  color: Colors.black
+                ),
+              ),
             ),
             TextButton(
               onPressed: () {
                 _deleteAccount(context); 
                 Navigator.of(context).pop(); 
               },
-              child: const Text('Delete'),
+              child: const Text(
+                'Delete',
+                style: TextStyle(
+                  fontFamily: 'TruenoRound',
+                  color: Colors.red
+                ),
+              ),
             ),
           ],
         );

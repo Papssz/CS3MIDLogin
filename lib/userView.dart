@@ -1,3 +1,5 @@
+import 'package:cs3midLogin/billingDetails.dart';
+import 'package:cs3midLogin/editProfile.dart';
 import 'package:cs3midLogin/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:cs3midLogin/userDetails.dart';
@@ -105,7 +107,11 @@ class UserView extends StatelessWidget {
                     height: 50,
                     child: ElevatedButton(
                       onPressed: () {
-                        
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) =>
+                            EditProfile(user: user)),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(255, 98, 0, 255),
@@ -141,6 +147,7 @@ class UserView extends StatelessWidget {
                             ),
                           ),
                           trailing: Container(
+                            width: 15,
                             padding: const EdgeInsets.all(4.0),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
@@ -156,7 +163,7 @@ class UserView extends StatelessWidget {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) =>
-                                SettingsPage()),
+                                SettingsPage(user: user)),
                             );
                           },
                         ),
@@ -167,13 +174,48 @@ class UserView extends StatelessWidget {
                             size: 20
                           ),
                           title: const Text(
-                            'Billing Details',
+                            'Transactions',
                             style: TextStyle(
                               color: Colors.black,
                               fontFamily: 'TruenoRound',
                             ),
                           ),
                           trailing: Container(
+                            width: 15,
+                            padding: const EdgeInsets.all(4.0),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.grey[200],
+                            ),
+                            child: const Icon(
+                              FontAwesomeIcons.angleRight, 
+                              color: Colors.black, 
+                              size: 16
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                  BillingDetails(user: user)),
+                            );
+                          },
+                        ),
+                        ListTile(
+                          leading: const FaIcon(
+                            FontAwesomeIcons.history, 
+                            color: Colors.black,
+                            size: 20
+                          ),
+                          title: const Text(
+                            'Bet History',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: 'TruenoRound',
+                            ),
+                          ),
+                          trailing: Container(
+                            width: 15,
                             padding: const EdgeInsets.all(4.0),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
@@ -201,6 +243,7 @@ class UserView extends StatelessWidget {
                             ),
                           ),
                           trailing: Container(
+                            width: 15,
                             padding: const EdgeInsets.all(4.0),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
@@ -227,13 +270,14 @@ class UserView extends StatelessWidget {
                             size: 21
                           ),
                           title: const Text(
-                            'User Details',
+                            'Information',
                             style: TextStyle(
                               color: Colors.black,
                               fontFamily: 'TruenoRound',
                             ),
                           ),
                           trailing: Container(
+                            width: 15,
                             padding: const EdgeInsets.all(4.0),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
@@ -246,11 +290,6 @@ class UserView extends StatelessWidget {
                             ),
                           ),
                           onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => UserDetails(user: user),
-                              ),
-                            );
                           },
                         ),
                         ListTile(
@@ -271,14 +310,33 @@ class UserView extends StatelessWidget {
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: const Text('Confirm Logout'),
-                                  content: const Text('Are you sure you want to logout?'),
+                                  title: const Text(
+                                    'Confirm Logout',
+                                    style: TextStyle(
+                                      fontFamily: 'TruenoRound',
+                                      fontSize: 20
+                                    ),
+                                  ),
+                                  content: const Text(
+                                    'Are you sure you want to logout?',
+                                    style: TextStyle(
+                                      fontFamily: 'TruenoRound',
+                                      fontSize: 16
+                                    ),
+                                  ),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: const Text('Cancel'),
+                                      child: const Text(
+                                        'Cancel',
+                                        style: TextStyle(
+                                          fontFamily: 'TruenoRound',
+                                          fontSize: 16,
+                                          color: Colors.black
+                                        ),
+                                      ),
                                     ),
                                     TextButton(
                                       onPressed: () {
@@ -287,7 +345,14 @@ class UserView extends StatelessWidget {
                                           MaterialPageRoute(builder: (context) => const LoginScreen()),
                                         );
                                       },
-                                      child: const Text('Logout'),
+                                      child: const Text(
+                                        'Logout',
+                                        style: TextStyle(
+                                          fontFamily: 'TruenoRound',
+                                          fontSize: 16,
+                                          color: Colors.red
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 );

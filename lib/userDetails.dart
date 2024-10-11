@@ -84,37 +84,44 @@ class UserDetails extends StatelessWidget {
                     const SizedBox(height: 16.0),
                     _buildInfoRow(
                       FontAwesomeIcons.user,
-                      'Gender: $gender',
+                      'Gender',
+                      gender,
                     ),
                     const SizedBox(height: 12.0),
                     _buildInfoRow(
                       FontAwesomeIcons.calendar,
-                      'Date of Birth: $dob',
+                      'Date of Birth',
+                      dob,
                     ),
                     const SizedBox(height: 12.0),
                     _buildInfoRow(
                       FontAwesomeIcons.fileAlt,
-                      'Registered: $registered',
+                      'Registered',
+                      registered,
                     ),
                     const SizedBox(height: 16.0),
                     _buildInfoRow(
                       FontAwesomeIcons.mapMarkerAlt,
-                      'Address: $streetNumber $streetName, $city, $state, $postcode, $country',
+                      'Address',
+                      '$streetNumber $streetName, $city, $state, $postcode, $country',
                     ),
                     const SizedBox(height: 16.0),
                     _buildInfoRow(
                       FontAwesomeIcons.phone,
-                      'Phone: $phone',
+                      'Phone',
+                      phone,
                     ),
                     const SizedBox(height: 8.0),
                     _buildInfoRow(
                       FontAwesomeIcons.mobileScreen,
-                      'Cell: $cell',
+                      'Cell',
+                      cell,
                     ),
                     const SizedBox(height: 8.0),
                     _buildInfoRow(
                       FontAwesomeIcons.solidFlag,
-                      'Nationality: $nationality',
+                      'Nationality',
+                      nationality,
                     ),
                   ],
                 ),
@@ -126,34 +133,49 @@ class UserDetails extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoRow(IconData icon, String text) {
+  Widget _buildInfoRow(IconData icon, String label, String value) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         FaIcon(
           icon,
           color: const Color.fromARGB(255, 0, 10, 50),
-          size: 25,
+          size: 22,
         ),
         const SizedBox(width: 12.0),
         Expanded(
-          child: Container(
-            padding: const EdgeInsets.all(12.0),
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 240, 240, 240),
-              borderRadius: BorderRadius.circular(12.0),
-              border: Border.all(
-                color: const Color.fromARGB(255, 0, 10, 50),
-                width: 0.5,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '$label:',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  fontFamily: 'TruenoRound',
+                ),
               ),
-            ),
-            child: Text(
-              text,
-              style: const TextStyle(
-                fontSize: 14,
-                fontFamily: 'TruenoRound',
+              const SizedBox(height: 4.0),
+              Text(
+                value,
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontFamily: 'TruenoRound',
+                ),
               ),
-            ),
+            ],
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(4.0),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.grey[200],
+          ),
+          child: const FaIcon(
+            FontAwesomeIcons.angleRight,
+            color: Colors.black,
+            size: 15,
           ),
         ),
       ],
